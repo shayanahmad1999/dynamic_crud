@@ -43,7 +43,7 @@ class AjaxController extends Controller
                     'password' => 'required|min:6|max:12'
                 ]);
                 $data['password'] = $request->password;
-            }    
+            }
 
             if ($request->update_key != '') {
                 $user = User::find($request->update_key);
@@ -56,15 +56,16 @@ class AjaxController extends Controller
                 $message = 'record created successfully';
             }
             $new_data = "
-            <tr>
-                <td>{$user->name}</td>
-                <td>{$user->email}</td>
-                <td>
-                    <button class='btn btn-primary edit' data-id='{$user->id}' action_url='" . route('ajax.edit', $user->id) . "'>Edit</button>
-                    <button class='btn btn-danger delete' data-id='{$user->id}' action_url='" . route('ajax.delete', $user->id) . "'>Delete</button>
-                </td>
-            </tr>
-        ";
+                <tr>
+                    <td>{$user->name}</td>
+                    <td>{$user->email}</td>
+                    <td>
+                        <button class=\"btn btn-primary edit\" action_url=\"" . route('ajax.edit', $user->id) . "\" data-id=\"{$user->id}\">Edit</button>
+                        <button class=\"btn btn-danger delete\" action_url=\"" . route('ajax.delete', $user->id) . "\" data-id=\"{$user->id}\">Delete</button>
+                    </td>
+                </tr>
+            ";
+
             return response()->json([
                 'status' => 'success',
                 'message' => $message,
@@ -118,10 +119,10 @@ class AjaxController extends Controller
     {
         $search = $request->search_string;
         $data['result'] = User::where('name', 'like', "%$search%")
-        ->orWhere('email', 'like', "%$search%")
-        ->paginate(10);
+            ->orWhere('email', 'like', "%$search%")
+            ->paginate(10);
 
-        if($data['result']->count() >= 1) {
+        if ($data['result']->count() >= 1) {
             return view('pagination', $data)->render();
         } else {
             return response()->json(['status' => 'Nothing found']);
