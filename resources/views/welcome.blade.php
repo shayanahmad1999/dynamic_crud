@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    @include('components.navbar')
     <div class="container">
         <div class="card">
             <div class="card-body">
@@ -90,7 +91,6 @@
                 </div>
             </div>
         </div>
-        <a href="{{ route('ajax.index') }}">Using With Ajax</a>
     </div>
 </body>
 
