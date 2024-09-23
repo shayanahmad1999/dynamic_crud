@@ -12,17 +12,26 @@
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 
-First i do Dynamic CRUD 
+##First i do Dynamic CRUD 
+
     ->DynamicCrudServices.php in app/Services
+
     ->define it in AppServicesProvider.php app/Providers
+
     ->create controller DynamicCrudController.php app/Http/Controllers
+
     ->route define in web.php routes
+
     ->views file is welcome.blade.php
 
 
 
-second i do CRUD operation with ajax in single page
+##Second i do CRUD operation with ajax in single page
+
     ->define routes in web.php routes
+
     ->AjaxController.php app/Http/Controllers
+
     ->views files is index.blade.php and pagination.blade.php
+    
     ->all ajax code in ajax.js public/assets/ajax.js
