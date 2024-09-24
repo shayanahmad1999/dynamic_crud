@@ -15,6 +15,9 @@
             <li class="nav-item {{ request()->routeIs('ajax.modal') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('ajax.modal') }}">Modal With Ajax</a>
             </li>
+            <li class="nav-item {{ request()->routeIs('users.index') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('users.index') }}">Separate With Ajax</a>
+            </li>
         </ul>
     </div>
 </nav>

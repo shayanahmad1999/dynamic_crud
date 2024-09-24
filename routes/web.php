@@ -4,6 +4,7 @@ use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\AjaxModalController;
 use App\Http\Controllers\AjaxSeparateController;
 use App\Http\Controllers\DynamicCrudController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -31,3 +32,9 @@ Route::get('items/{item}/edit', [AjaxModalController::class, 'edit'])->name('ite
 Route::put('items/{item}', [AjaxModalController::class, 'update'])->name('items.update');
 Route::delete('items/{item}', [AjaxModalController::class, 'destroy'])->name('items.destroy');
 Route::get('items/search', [AjaxModalController::class, 'search'])->name('items.search');
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+Route::get('/users/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
+Route::delete('/users/destroy/{id}', [UserController::class, 'destroy'])->name('users.destroy');
