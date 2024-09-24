@@ -25,9 +25,9 @@ $(document).ready(function () {
                 $.each(errors, function (key, value) {
                     errorMsg += value.join(', ') + '\n';
                 });
-                Swal.fire('Error', errorMsg, 'danger');
+                Swal.fire('Error', errorMsg, 'error');
             } else {
-                Swal.fire('Error', 'An unexpected error occurred. Please try again.', 'danger');
+                Swal.fire('Error', 'An unexpected error occurred. Please try again.', 'error');
             }
         }).always(function () {
 
