@@ -21,10 +21,21 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
     ->views file is welcome.blade.php
 
 
-
 ## Second i do CRUD operation with ajax in single page
 
     ->define routes in web.php routes
     ->AjaxController.php app/Http/Controllers
     ->views files is index.blade.php and pagination.blade.php
     ->all ajax code in ajax.js public/assets/ajax.js
+
+
+## Third i do CRUD operation with ajax in Modal
+
+    ->define routes in web.php routes
+    ->AjaxModalController.php app/Http/Controllers
+    ->views files is 
+        modal-index.blade.php, 
+        modal-create.blade.php, 
+        modal-edit.blade.php, 
+        modal-table.blade.php, 
+    ->all ajax code in ajax-modal.js public/assets/ajax.js
