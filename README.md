@@ -39,3 +39,14 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
         modal-edit.blade.php, 
         modal-table.blade.php, 
     ->all ajax code in ajax-modal.js public/assets/ajax.js
+
+
+## Fourth i do CRUD operation with ajax in Separate page like create, index have separate file
+
+    ->define routes in web.php routes
+    ->UserController.php app/Http/Controllers
+    ->views files is 
+        index.blade.php, views/users
+        create.blade.php, views/users
+        table.blade.php, views/users
+    ->all ajax code in separate-ajax.js public/assets/ajax.js
